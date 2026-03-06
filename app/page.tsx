@@ -61,6 +61,13 @@ export default function Home() {
               LinkedIn
             </a>
 
+            <a
+              href="https://orcid.org/my-orcid?orcid=0009-0001-7493-5509"
+              target="_blank"
+              className="border px-6 py-3 rounded-xl hover:bg-gray-100"
+            >
+              ORCID
+            </a>
           </div>
         </div>
 
