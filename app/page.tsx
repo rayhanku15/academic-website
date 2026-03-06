@@ -22,8 +22,8 @@ export default function Home() {
       <section id="home" className="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-12 items-center">
 
         <div>
-          <h1 className="text-4xl md:text-5xl font-serif font-semibold leading-tight">
-            Md Sayeed Abu Rayhan, MS
+          <h1 className="text-3xl md:text-4xl font-serif font-semibold leading-tight">
+            Md Sayeed Abu Rayhan
           </h1>
 
           <p className="mt-4 text-lg text-gray-600">
@@ -46,7 +46,7 @@ export default function Home() {
             </a>
 
             <a
-              href="https://scholar.google.com"
+              href="https://scholar.google.com/citations?hl=en&user=gbIuT-kAAAAJ"
               target="_blank"
               className="border px-6 py-3 rounded-xl hover:bg-gray-100"
             >
@@ -54,7 +54,7 @@ export default function Home() {
             </a>
 
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/md-sayeed-abu-rayhan-113703165/"
               target="_blank"
               className="border px-6 py-3 rounded-xl hover:bg-gray-100"
             >
@@ -66,7 +66,7 @@ export default function Home() {
 
         <div className="flex justify-center">
           <img
-            src="/headshot.jpg"
+            src="/headshot.jpg.png"
             alt="Rayhan"
             className="w-64 h-64 object-cover rounded-2xl shadow-md"
           />
@@ -85,7 +85,7 @@ export default function Home() {
           </h2>
 
           <p className="mt-6 text-lg text-gray-700 leading-relaxed">
-            I am a Ph.D. candidate in the Department of Biology at Indiana
+            I am a Ph.D. candidate in the Department of Biology at the Indiana
             State University. My research focuses on the epigenetic regulation
             of developmental genes during cardiac morphogenesis.
           </p>
@@ -177,7 +177,7 @@ export default function Home() {
           <div className="mt-8 text-center">
 
             <a
-              href="https://scholar.google.com"
+              href="https://scholar.google.com/citations?hl=en&user=gbIuT-kAAAAJ"
               target="_blank"
               className="text-blue-600 hover:underline"
             >
@@ -229,7 +229,7 @@ export default function Home() {
           <div className="mt-6 flex justify-center gap-6">
 
             <a
-              href="https://scholar.google.com"
+              href="https://scholar.google.com/citations?hl=en&user=gbIuT-kAAAAJ"
               className="hover:underline"
               target="_blank"
             >
@@ -237,7 +237,7 @@ export default function Home() {
             </a>
 
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/md-sayeed-abu-rayhan-113703165/"
               className="hover:underline"
               target="_blank"
             >
