@@ -158,18 +158,24 @@ export default function Home() {
           <ul className="mt-10 space-y-6 text-lg text-gray-700">
 
             <li>
-              Rayhan, M. S. A., et al. (2024). Title of article.
-              <em> Developmental Biology</em>.
+              Farmer, A.J., et al. (2025).  trithorax is an 
+essential regulator of cardiac Hox gene expression and anterior-posterior patterning of the 
+Drosophila embryonic heart tube. 
+              <em> Biol Open. 2025 Apr 15;14(4): bio061919. doi: 
+10.1242/bio.061919.</em>.
             </li>
 
             <li>
-              Rayhan, M. S. A., et al. (2023). Article title.
-              <em> Genetics</em>.
+              Rayhan, M. S. A., et al. (2023).  Estimating peak breeding season, 
+size at first maturity and variation in fecundity and egg-size at different sizes of Hilsa (Tenualosa 
+ilisha).
+              <em> Heliyon. 2023 Aug 23;9(9): e19420. doi: 10.1016/j.heliyon. 2023.e19420.</em>.
             </li>
 
             <li>
-              Rayhan, M. S. A., et al. (2022). Example article.
-              <em> Cell Reports</em>.
+              Ali, M.Y., et al. (2025). Identification and comparative analysis of Heat 
+Shock Protein genes Hsp70 and Hsp90 from gill transcriptomes of three Australian crayfish. 
+              <em> Egyptian journal of Aquatic Biology and Fisheries (In revision)</em>.
             </li>
 
           </ul>
