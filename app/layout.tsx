@@ -4,6 +4,9 @@ import "./globals.css"; // Ensure Tailwind CSS is imported
 export const metadata = {
   title: "Md Sayeed Abu Rayhan – PhD Candidate",
   description: "Epigenetic regulation of Hox genes during cardiac development",
+  verification: {
+    google: "wQJ-1qvH6YUegqECcFQGKaU5NI7ZaR20MXjOWGcQOvc",
+  },
 };
 
 export default function RootLayout({
