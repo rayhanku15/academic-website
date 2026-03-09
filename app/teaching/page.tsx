@@ -9,9 +9,8 @@ export default function Teaching() {
       </h2>
 
       <ul className="list-disc ml-6 space-y-2">
-        <li>Teaching Assistant – General Biology</li>
-        <li>Teaching Assistant – Cell Biology</li>
-        <li>Teaching Assistant – Genetics</li>
+        <li>Teaching Assistant – Human Anatomy</li>
+        <li>Teaching Assistant – Human Physiology</li>
       </ul>
 
       <p className="mt-6">
