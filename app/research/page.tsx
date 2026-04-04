@@ -47,12 +47,12 @@ export default function Research() {
         />
 
         <img
-          src="/research/Lab2.jpg"
+          src="/research/Lab2.png"
           className="w-full object-contain rounded-2xl shadow-md bg-gray-50 p-2"
         />
 
         <img
-          src="/research/Lab3.jpg"
+          src="/research/Lab3.png"
           className="w-full object-contain rounded-2xl shadow-md bg-gray-50 p-2"
         />
 
