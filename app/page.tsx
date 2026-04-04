@@ -38,7 +38,7 @@ export default function Home() {
       {/* Right Column: Headshot and Quick Links */}
       <div className="flex flex-col items-center order-1 md:order-2">
         <img
-          src="/headshot.jpg.png"
+          src="/headshot.jpg"
           alt="Rayhan"
           className="w-64 h-64 object-cover rounded-2xl shadow-md"
         />

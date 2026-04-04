@@ -38,6 +38,26 @@ export default function Research() {
         <li>Embryonic developmental studies</li>
       </ul>
 
+       {/* Images only (no heading) */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+
+        <img
+          src="/Research/Lab1.png"
+          className="w-full object-contain rounded-2xl shadow-md bg-gray-50 p-2"
+        />
+
+        <img
+          src="/research/Lab2.jpg"
+          className="w-full object-contain rounded-2xl shadow-md bg-gray-50 p-2"
+        />
+
+        <img
+          src="/research/Lab3.jpg"
+          className="w-full object-contain rounded-2xl shadow-md bg-gray-50 p-2"
+        />
+
+      </div>
+
     </main>
   );
 }

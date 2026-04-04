@@ -10,20 +10,49 @@ export default function Contact() {
         Terre Haute, Indiana 47809, USA
       </p>
 
+      {/* Email */}
       <p className="mb-2">
-        Email: rayhanku15@gmail.com, mrayhan@sycamores.indstate.edu
+        Email:{" "}
+        <a href="mailto:mrayhan@sycamores.indstate.edu" className="text-blue-600 hover:underline">
+          mrayhan@sycamores.indstate.edu
+        </a>,{" "}
+        <a href="mailto:rayhanku15@gmail.com" className="text-blue-600 hover:underline">
+          rayhanku15@gmail.com
+        </a>
       </p>
 
+      {/* LinkedIn */}
       <p className="mb-2">
-        Linkedin: https://www.linkedin.com/in/md-sayeed-abu-rayhan-113703165/
+        LinkedIn:{" "}
+        <a
+          href="https://www.linkedin.com/in/md-sayeed-abu-rayhan-113703165/"
+          target="_blank"
+          className="text-blue-600 hover:underline"
+        >
+          https://www.linkedin.com/in/md-sayeed-abu-rayhan-113703165/
+        </a>
       </p>
 
-      <p>
-        Facebook: https://www.facebook.com/sayeed.abu.rayhan
+      {/* Facebook */}
+      <p className="mb-2">
+        Facebook:{" "}
+        <a
+          href="https://www.facebook.com/sayeed.abu.rayhan"
+          target="_blank"
+          className="text-blue-600 hover:underline"
+        >
+          https://www.facebook.com/sayeed.abu.rayhan
+        </a>
       </p>
-       <p className="mb-2">
-        Phone: +1-812-916-3675
+
+      {/* Phone */}
+      <p className="mb-2">
+        Phone:{" "}
+        <a href="tel:+18129163675" className="text-blue-600 hover:underline">
+          +1-812-916-3675
+        </a>
       </p>
+
     </main>
   );
 }
