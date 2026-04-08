@@ -55,6 +55,21 @@ export default function Research() {
           src="/Research/Lab3.png"
           className="w-full object-contain rounded-2xl shadow-md bg-gray-50 p-2"
         />
+        
+        <img
+          src="/Research/Lab4.png"
+          className="w-full object-contain rounded-2xl shadow-md bg-gray-50 p-2"
+        />
+        
+        <img
+          src="/Research/Lab5.png"
+          className="w-full object-contain rounded-2xl shadow-md bg-gray-50 p-2"
+        />
+        
+        <img
+          src="/Research/Lab6.png"
+          className="w-full object-contain rounded-2xl shadow-md bg-gray-50 p-2"
+        />
 
       </div>
 
