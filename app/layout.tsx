@@ -1,13 +1,5 @@
 import Link from "next/link";
-import "./globals.css"; // Ensure Tailwind CSS is imported
-
-export const metadata = {
-  title: "Md Sayeed Abu Rayhan – PhD Candidate",
-  description: "Epigenetic regulation of Hox genes during cardiac development",
-  verification: {
-    google: "wQJ-1qvH6YUegqECcFQGKaU5NI7ZaR20MXjOWGcQOvc",
-  },
-};
+import "./globals.css";
 
 export default function RootLayout({
   children,
@@ -16,51 +8,49 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-white text-gray-800 min-h-screen flex flex-col">
+      <body className="bg-[#1f3b5b] py-8">
 
-        {/* Top Navigation Bar */}
-        <header className="w-full bg-white border-b sticky top-0 z-50">
-          <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 className="text-xl font-semibold">Rayhan</h1>
-            <nav className="flex gap-6 text-sm font-medium">
-              <Link href="/">Home</Link>
-              <Link href="/about">About</Link>
-              <Link href="/research">Research</Link>
-              <Link href="/teaching">Teaching</Link>
-              <Link href="/publications">Publications</Link>
-              <Link href="/contact">Contact</Link>
-            </nav>
-          </div>
-        </header>
+        {/* Centered white container */}
+        <div className="max-w-3xl mx-auto bg-white min-h-screen shadow-lg">
 
-        {/* Main Content */}
-        <main className="flex-grow">{children}</main>
-
-        {/* Footer */}
-        <footer className="bg-gray-900 text-white py-10 text-center mt-12">
-          <div className="max-w-6xl mx-auto px-6">
-            <p className="text-sm mb-2">
-              © {new Date().getFullYear()} Md Sayeed Abu Rayhan
+          {/* Header */}
+          <div className="px-6 py-6 border-b">
+            <h1 className="text-xl font-semibold">
+              Md Sayeed Abu Rayhan
+            </h1>
+            <p className="text-gray-600 text-sm mt-1">
+              Ph.D. Candidate, Department of Biology <br />
+              Indiana State University
             </p>
-            <div className="flex justify-center gap-4">
-              <a href="/Rayhan_CV_10212025.pdf" target="_blank">
-                <img src="/icons/cv.png" alt="CV" className="w-6 h-6 hover:opacity-80 transition" />
-              </a>
-              <a href="https://scholar.google.com/citations?hl=en&user=gbIuT-kAAAAJ" target="_blank">
-                <img src="/icons/googlescholar.png" alt="Google Scholar" className="w-6 h-6 hover:opacity-80 transition" />
-              </a>
-              <a href="https://www.researchgate.net/profile/Sayeed-Abu-Rayhan?ev=hdr_xprf" target="_blank">
-                <img src="/icons/researchgate.png" alt="ResearchGate" className="w-6 h-6 hover:opacity-80 transition" />
-              </a>
-              <a href="https://www.linkedin.com/in/md-sayeed-abu-rayhan-113703165/" target="_blank">
-                <img src="/icons/linkedin.png" alt="LinkedIn" className="w-6 h-6 hover:opacity-80 transition" />
-              </a>
-              <a href="https://orcid.org/0009-0001-7493-5509" target="_blank">
-                <img src="/icons/orcid.png" alt="ORCID" className="w-6 h-6 hover:opacity-80 transition" />
-              </a>
-            </div>
           </div>
-        </footer>
+
+          {/* Navigation */}
+          <nav className="px-6 py-3 border-b text-sm flex flex-wrap gap-6">
+            <Link href="/">Home</Link>
+            <Link href="/about">About</Link>
+            <Link href="/research">Research</Link>
+            <Link href="/publications">Publications</Link>
+            <Link href="/fellowships">Fellowships & Awards</Link>
+            <Link href="/presentations">Presentations</Link>
+            <Link href="/teaching">Teaching</Link>
+            <Link href="/contact">Contact</Link>
+          </nav>
+
+          {/* Banner */}
+          <div className="px-6 py-4">
+            <img
+              src="/banner.jpg"
+              alt="Banner"
+              className="w-full h-56 object-cover rounded"
+            />
+          </div>
+
+          {/* Page content */}
+          <div className="px-8 pb-12">
+            {children}
+          </div>
+
+        </div>
 
       </body>
     </html>
