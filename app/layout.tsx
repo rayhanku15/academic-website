@@ -41,7 +41,7 @@ export default function RootLayout({
             <img
               src="/banner.jpg"
               alt="Banner"
-              className="w-full h-56 object-cover rounded"
+              className="w-full h-auto rounded"
             />
           </div>
 
