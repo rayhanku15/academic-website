@@ -39,7 +39,7 @@ export default function RootLayout({
           {/* Banner */}
           <div className="px-6 py-4">
             <img
-              src="/banner.jpg"
+              src="/banner.png"
               alt="Banner"
               className="w-full h-auto rounded"
             />
