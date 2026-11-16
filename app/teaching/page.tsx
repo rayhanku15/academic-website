@@ -1,24 +1,53 @@
+import type { Metadata } from "next";
+import PageHeader, { Section } from "../_components/PageHeader";
+
+export const metadata: Metadata = {
+  title: "Teaching and mentoring",
+  description:
+    "Teaching and mentoring experience of Md. Sayeed Abu Rayhan: Human Anatomy and Human Physiology laboratories at Indiana State University, and research mentoring.",
+  alternates: { canonical: "/teaching" },
+};
+
 export default function Teaching() {
   return (
-    <main className="max-w-4xl mx-auto px-6 py-16">
+    <>
+      <PageHeader
+        title="Teaching and mentoring"
+        lead="I teach so that students leave with a strong conceptual understanding, and with the curiosity and critical thinking to keep building on it."
+      />
 
-      <h1 className="text-3xl font-semibold mb-6">Teaching</h1>
+      <Section title="Laboratory teaching">
+        <div className="max-w-[68ch]">
+          <p className="font-semibold">Graduate Teaching Assistant, Indiana State University</p>
+          <p className="text-muted">August 2022 to present</p>
+          <ul className="mt-4 space-y-3">
+            <li className="border-l-2 border-accent pl-5">
+              <strong className="font-semibold">Human Anatomy laboratory (BIO-231L)</strong> and{" "}
+              <strong className="font-semibold">Human Physiology laboratory (BIO-241L)</strong>, taught across
+              eight semesters to about 70 undergraduates each semester.
+            </li>
+            <li className="border-l-2 border-accent pl-5">
+              I deliver the lab instruction, run the practical assessments and hold review sessions.
+            </li>
+          </ul>
+        </div>
+      </Section>
 
-      <h2 className="text-xl font-semibold mb-3">
-        Indiana State University
-      </h2>
+      <Section title="Research mentoring">
+        <p className="max-w-[68ch]">
+          In the Schwab Lab I mentor undergraduate and high-school students through their first research
+          projects in molecular biology and genetics. That covers experimental design, fly husbandry and
+          genetics, embryo dissection, immunostaining and confocal imaging.
+        </p>
+      </Section>
 
-      <ul className="list-disc ml-6 space-y-2">
-        <li>Teaching Assistant – Human Anatomy</li>
-        <li>Teaching Assistant – Human Physiology</li>
-      </ul>
-
-      <p className="mt-6">
-        My teaching philosophy focuses on helping students develop strong
-        conceptual understanding while encouraging curiosity and critical
-        thinking in biological sciences.
-      </p>
-
-    </main>
+      <Section title="Training outside the university">
+        <p className="max-w-[68ch]">
+          As a Scientific Officer at the Bangladesh Agricultural Research Institute (2020 to 2022), I delivered
+          training for farmers in aquaculture and fish disease management as part of the institute&rsquo;s
+          on-farm research programs.
+        </p>
+      </Section>
+    </>
   );
 }

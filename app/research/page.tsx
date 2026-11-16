@@ -1,78 +1,178 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import PageHeader, { Section } from "../_components/PageHeader";
+
+export const metadata: Metadata = {
+  title: "Research",
+  description:
+    "How Polycomb and trithorax group genes control Hox expression to pattern the Drosophila embryonic heart tube, and what that means for congenital heart defects.",
+  alternates: { canonical: "/research" },
+};
+
 export default function Research() {
   return (
-    <main className="max-w-4xl mx-auto px-6 py-16">
+    <>
+      <PageHeader
+        title="Research"
+        lead="How does a developing heart keep the right genes on in the right place, and what goes wrong when it cannot?"
+      />
 
-      <h1 className="text-3xl font-semibold mb-6">Research</h1>
+      <Section title="Why the heart, and why Hox genes">
+        <div className="prose-block">
+          <p>
+            Congenital heart defects are among the most common birth defects in the United States, where an
+            estimated 2.4 million people of all ages live with one. Sequencing studies of patients keep finding
+            damaging mutations in genes that modify chromatin, which suggests that the heart depends on these
+            regulators to keep its developmental genes correctly expressed.
+          </p>
+          <p>
+            Several of those genes are the human counterparts of two families first found in the fruit fly: the
+            trithorax group (trxG), which keeps genes active, and the Polycomb group (PcG), which keeps them
+            silent. The two families work against each other to control Hox genes, and Hox genes are needed for
+            heart development in both flies and mice. Mutations in single Hox genes can cause heart defects too.
+            Patients with HOXA1 syndrome, for example, have congenital heart defects of varying severity.
+          </p>
+          <p>
+            What is still not understood is how trxG and PcG genes shape the heart through their control of Hox
+            genes. That is the question my research addresses.
+          </p>
+        </div>
+      </Section>
 
-      <p className="mb-4">
-        My research focuses on understanding the molecular and epigenetic
-        mechanisms that regulate cardiac development.
-      </p>
+      <Section title="The model: the fly heart tube">
+        <div className="prose-block">
+          <p>
+            The <em>Drosophila</em> embryonic heart, called the dorsal vessel, is a simple tube made of two rows
+            of cardiac cells. Hox genes pattern it from front to back, dividing it into an anterior aorta and a
+            posterior heart, with <em>abdominal-A</em> (<em>abd-A</em>) expressed in the posterior heart. Because
+            the tube is simple, and because fly genetics lets me remove one regulator at a time, it is a good
+            place to see what each chromatin regulator does to Hox expression in a real organ.
+          </p>
+        </div>
+        <figure className="mt-7 max-w-[47rem]">
+          <Image
+            src="/banner.png"
+            alt="Confocal micrograph of a Drosophila embryonic heart tube showing two rows of cardiac cell nuclei."
+            width={752}
+            height={224}
+            sizes="(min-width: 800px) 47rem, 100vw"
+            className="w-full rounded-lg bg-night"
+          />
+          <figcaption className="mt-2 text-[0.9rem] text-muted">
+            The <em>Drosophila</em> embryonic heart tube, imaged by confocal microscopy.
+          </figcaption>
+        </figure>
+      </Section>
 
-      <h2 className="text-xl font-semibold mt-8 mb-3">
-        Current Research
-      </h2>
+      <Section title="What I have found">
+        <ul className="max-w-[68ch] space-y-4">
+          <li className="border-l-2 border-accent pl-5">
+            <strong className="font-semibold">Polycomb keeps the anterior heart free of <em>abd-A</em>.</strong>{" "}
+            Polycomb group genes pattern the anterior dorsal vessel by repressing <em>trithorax</em>-mediated{" "}
+            <em>abd-A</em> expression. When that repression is lost, the heart tube is mispatterned. I am first
+            author on this work, which is in preparation for submission.
+          </li>
+          <li className="border-l-2 border-accent pl-5">
+            <strong className="font-semibold"><em>trithorax</em> switches cardiac Hox genes on.</strong> As a
+            co-author on our lab&rsquo;s 2025 paper in <em>Biology Open</em>, I helped show that{" "}
+            <em>trithorax</em> is an essential regulator of cardiac Hox expression and anterior-posterior
+            patterning of the heart tube.{" "}
+            <a className="link" href="https://doi.org/10.1242/bio.061919" target="_blank" rel="noopener noreferrer">
+              Read the paper
+            </a>
+            .
+          </li>
+          <li className="border-l-2 border-accent pl-5">
+            <strong className="font-semibold">The same regulators in dividing cardiac progenitors.</strong> With
+            an Indiana Academy of Science grant on which I am principal investigator, I am extending the project
+            to trithorax and Polycomb group regulation of <em>seven up</em> (<em>svp</em>) cardiac progenitor
+            cell division and patterning.
+          </li>
+        </ul>
+      </Section>
 
-      <p className="mb-4">
-        Investigating epigenetic regulation of Hox genes during cardiac
-        development and its implications for congenital heart defects.
-        We already know that epigenetic regulators e.g., trithorax group (trxG), polycomb group (PcG) genes regulate heart development and patterning by activating or repressing transcription during development. 
-        We also know that Hox genes are critical for heart development both in fruit fly and mice. Mutations in these epigenetic regulators and Hox genes are directly or indirectly associated with congenital heart defects (CHDs). 
-        However, we do not completely understand how trxG and PcG regulate heart development and patterning via hox regulation. 
-        Given the necessity of Hox activity and epigenetic regulation in heart development, the goal of my ongoing and future research is to explore the mechanisms by which trxG and PcG genes regulate Hox expression, and thereby, how these genes contribute to CHDs.
-        Congenital heart defects (CHDs) are among the most common birth defects within the United States with a prevalence of approximately 2.4 million individuals of all age groups. High-throughput DNA sequencing investigations of CHD patients have identified deleterious mutations in chromatin modifying genes that may disrupt the expression of key developmental cardiac genes. 
-        Several of the identified genes are the human orthologous genes of the Drosophila (fruit fly) trithorax (trxG) group and polycomb group (PcG) which antagonize one another to regulate Hox gene transcription. Individual Hox gene mutations can also generate a spectrum of developmental and congenital abnormalities. 
-        For example, the autosomal recessive HOXA1 syndrome patients present with CHDs of varying penetrance and severity. Therefore, trxG and PcG genes likely play critical functions regulating Hox activity within the cardiac genetic network. My current research focuses on identifying and characterizing the roles of trithorax (trx) and polycomb (Pc) genes in cardiac Hox expression and anterior and posterior patterning of the heart using fruit fly (Drosophila melanogaster) heart tube as the system. 
-        By defining the functions of these genes my model of trx and Pc regulation of cardiac patterning via Hox control will be able to help to understand the pathogenesis of CHDs. 
+      <Section title="Approaches">
+        <ul className="grid max-w-[60rem] gap-x-10 gap-y-5 sm:grid-cols-2">
+          <li>
+            <p className="font-semibold"><em>Drosophila</em> genetics</p>
+            <p className="text-muted">
+              Complex crossing schemes, loss-of-function and transgenic analysis, balancer and GAL4/UAS systems,
+              embryo collection and dissection.
+            </p>
+          </li>
+          <li>
+            <p className="font-semibold">Imaging</p>
+            <p className="text-muted">
+              Whole-mount embryo immunostaining, multiplexed immunofluorescence, confocal microscopy, image
+              acquisition and quantification.
+            </p>
+          </li>
+          <li>
+            <p className="font-semibold">Molecular biology</p>
+            <p className="text-muted">
+              Molecular cloning and plasmid construction, PCR and RT-PCR, transgenic reagent development, cell
+              and tissue culture.
+            </p>
+          </li>
+          <li>
+            <p className="font-semibold">Genomics and analysis</p>
+            <p className="text-muted">
+              Transcriptome analysis, gene annotation and comparative genomics, with R, BLAST, MEGA and Geneious.
+            </p>
+          </li>
+        </ul>
+      </Section>
 
-      </p>
+      <Section title="Where I am heading">
+        <div className="prose-block">
+          <p>
+            The question running through my Ph.D. is how a cell keeps a gene expression state once it is set. As
+            a postdoc I want to take that question further, into chromatin regulation of organ and neuronal
+            identity, in <em>Drosophila</em> and in mammalian systems. I am looking for a position starting in
+            summer 2027.{" "}
+            <Link className="link" href="/contact">Get in touch</Link>.
+          </p>
+        </div>
+      </Section>
 
-      <h2 className="text-xl font-semibold mt-8 mb-3">
-        Techniques
-      </h2>
+      <Section title="Earlier work">
+        <div className="prose-block">
+          <p>
+            Before my Ph.D. I trained in fish genetics at Khulna University in Bangladesh. My M.Sc. research
+            worked out the peak breeding season, size at first maturity and fecundity of Hilsa (
+            <em>Tenualosa ilisha</em>), the national fish, and the findings supported the fishing-ban period set
+            by the Government of Bangladesh (
+            <a className="link" href="https://doi.org/10.1016/j.heliyon.2023.e19420" target="_blank" rel="noopener noreferrer">
+              <em>Heliyon</em>, 2023
+            </a>
+            ). As an undergraduate I annotated and compared heat shock protein genes from crayfish gill
+            transcriptomes and measured genetic diversity in catfish populations. I then spent two years as a
+            Scientific Officer at the Bangladesh Agricultural Research Institute, running on-farm research and
+            training farmers.
+          </p>
+        </div>
+      </Section>
 
-      <ul className="list-disc ml-6">
-        <li>Immunohistochemistry</li>
-        <li>Cell culture</li>
-        <li>Cloning</li>
-        <li>Embryonic developmental studies</li>
-      </ul>
-
-       {/* Images only (no heading) */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-
-        <img
-          src="/Research/Lab1.png"
-          className="w-full object-contain rounded-2xl shadow-md bg-gray-50 p-2"
-        />
-
-        <img
-          src="/Research/Lab2.png"
-          className="w-full object-contain rounded-2xl shadow-md bg-gray-50 p-2"
-        />
-
-        <img
-          src="/Research/Lab3.png"
-          className="w-full object-contain rounded-2xl shadow-md bg-gray-50 p-2"
-        />
-        
-        <img
-          src="/Research/Lab4.png"
-          className="w-full object-contain rounded-2xl shadow-md bg-gray-50 p-2"
-        />
-        
-        <img
-          src="/Research/Lab5.png"
-          className="w-full object-contain rounded-2xl shadow-md bg-gray-50 p-2"
-        />
-        
-        <img
-          src="/Research/Lab6.png"
-          className="w-full object-contain rounded-2xl shadow-md bg-gray-50 p-2"
-        />
-
-      </div>
-
-    </main>
+      <section className="mt-14 grid gap-6 sm:grid-cols-3">
+        <figure>
+          <Image src="/images/bench.jpg" alt="Sayeed pipetting at the lab bench." width={761} height={702}
+            sizes="(min-width: 640px) 33vw, 100vw" className="aspect-[4/3] w-full rounded-lg object-cover" />
+          <figcaption className="mt-2 text-[0.9rem] text-muted">At the bench.</figcaption>
+        </figure>
+        <figure>
+          <Image src="/images/poster-session.jpg" alt="Sayeed explaining a poster to conference attendees." width={1280} height={960}
+            sizes="(min-width: 640px) 33vw, 100vw" className="aspect-[4/3] w-full rounded-lg object-cover" />
+          <figcaption className="mt-2 text-[0.9rem] text-muted">Presenting at a conference poster session.</figcaption>
+        </figure>
+        <figure>
+          <Image src="/images/poster.jpg" alt="Sayeed standing beside a research poster." width={1600} height={1057}
+            sizes="(min-width: 640px) 33vw, 100vw" className="aspect-[4/3] w-full rounded-lg object-cover" />
+          <figcaption className="mt-2 text-[0.9rem] text-muted">
+            With our poster on Polycomb patterning of the anterior heart tube.
+          </figcaption>
+        </figure>
+      </section>
+    </>
   );
 }

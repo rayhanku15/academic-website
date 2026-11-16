@@ -1,57 +1,105 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
+import Nav from "./_components/Nav";
+import Band from "./_components/Band";
+import { profile } from "./_data/profile";
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+const description =
+  "Md. Sayeed Abu Rayhan is a Ph.D. candidate at Indiana State University studying how Polycomb and trithorax group genes control Hox expression and pattern the Drosophila heart. Open to postdoctoral positions from summer 2027.";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(profile.siteUrl),
+  title: {
+    default: "Md. Sayeed Abu Rayhan | Developmental genetics and chromatin",
+    template: "%s | Md. Sayeed Abu Rayhan",
+  },
+  description,
+  keywords: [
+    "Md. Sayeed Abu Rayhan",
+    "Sayeed Abu Rayhan",
+    "Polycomb",
+    "trithorax",
+    "Hox genes",
+    "Drosophila heart",
+    "cardiac development",
+    "congenital heart defects",
+    "chromatin",
+    "developmental genetics",
+    "Indiana State University",
+  ],
+  authors: [{ name: profile.name, url: profile.siteUrl }],
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "profile",
+    url: profile.siteUrl,
+    siteName: profile.name,
+    title: "Md. Sayeed Abu Rayhan | Developmental genetics and chromatin",
+    description,
+    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "Md. Sayeed Abu Rayhan, developmental genetics and chromatin" }],
+  },
+  twitter: { card: "summary_large_image", title: profile.name, description, images: ["/og.jpg"] },
+};
+
+// Structured data so search engines connect this site with the same person's
+// Google Scholar, ORCID and LinkedIn profiles.
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: profile.name,
+  alternateName: ["Sayeed Abu Rayhan", "Rayhan MSA", "Abu Rayhan MS"],
+  url: profile.siteUrl,
+  image: `${profile.siteUrl}/images/portrait.jpg`,
+  email: `mailto:${profile.email}`,
+  jobTitle: "Ph.D. Candidate in Biology",
+  affiliation: { "@type": "CollegeOrUniversity", name: "Indiana State University" },
+  alumniOf: { "@type": "CollegeOrUniversity", name: "Khulna University" },
+  knowsAbout: ["Polycomb group proteins", "trithorax group", "Hox genes", "Drosophila genetics", "cardiac development", "epigenetics"],
+  sameAs: [profile.scholar, profile.orcid, profile.linkedin],
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="bg-[#1f3b5b] py-8">
+      <body className="flex min-h-screen flex-col">
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-50 focus:rounded focus:bg-card focus:px-3 focus:py-2"
+        >
+          Skip to content
+        </a>
 
-        {/* Centered white container */}
-        <div className="max-w-3xl mx-auto bg-white min-h-screen shadow-lg">
+        <header className="border-b border-line bg-card">
+          <div className="mx-auto flex max-w-[68rem] flex-wrap items-center justify-between gap-x-10 gap-y-2 px-5 py-4 sm:px-8">
+            <Link href="/" className="font-serif text-[1.3rem] font-semibold leading-tight tracking-tight">
+              {profile.name}
+            </Link>
+            <Nav />
+          </div>
+        </header>
 
-          {/* Header */}
-          <div className="px-6 py-6 border-b">
-            <h1 className="text-xl font-semibold">
-              Md Sayeed Abu Rayhan
-            </h1>
-            <p className="text-gray-600 text-sm mt-1">
-              Ph.D. Candidate, Department of Biology <br />
-              Indiana State University
+        <Band />
+
+        <main id="main" className="mx-auto w-full max-w-[68rem] flex-1 px-5 py-12 sm:px-8 sm:py-16">
+          {children}
+        </main>
+
+        <footer className="border-t border-line bg-card">
+          <div className="mx-auto flex max-w-[68rem] flex-wrap items-baseline justify-between gap-x-8 gap-y-3 px-5 py-8 text-[0.9rem] text-muted sm:px-8">
+            <p>
+              {profile.name} · {profile.role}, {profile.university}
             </p>
+            <p className="flex flex-wrap gap-x-5 gap-y-1">
+              <a className="link" href={`mailto:${profile.email}`}>Email</a>
+              <a className="link" href={profile.scholar} target="_blank" rel="noopener noreferrer">Google Scholar</a>
+              <a className="link" href={profile.orcid} target="_blank" rel="noopener noreferrer">ORCID</a>
+              <a className="link" href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </p>
+            <p className="w-full text-[0.8rem]">Last updated {profile.updated}.</p>
           </div>
+        </footer>
 
-          {/* Navigation */}
-          <nav className="px-6 py-3 border-b text-sm flex flex-wrap gap-6">
-            <Link href="/">Home</Link>
-            <Link href="/about">About</Link>
-            <Link href="/research">Research</Link>
-            <Link href="/publications">Publications</Link>
-            <Link href="/fellowships">Fellowships & Awards</Link>
-            <Link href="/presentations">Presentations</Link>
-            <Link href="/teaching">Teaching</Link>
-            <Link href="/contact">Contact</Link>
-          </nav>
-
-          {/* Banner */}
-          <div className="px-6 py-4">
-            <img
-              src="/banner.png"
-              alt="Banner"
-              className="w-full h-auto rounded"
-            />
-          </div>
-
-          {/* Page content */}
-          <div className="px-8 pb-12">
-            {children}
-          </div>
-
-        </div>
-
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
       </body>
     </html>
   );
