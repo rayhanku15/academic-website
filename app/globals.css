@@ -20,10 +20,57 @@
   --color-accent-soft: #e4f1eb;
   --color-ember: #b5521b;
   --color-night: #070d0a;
+  --color-on-accent: #ffffff;
 }
 
 :root {
   color-scheme: light;
+}
+
+/* Dark theme. It applies when the visitor's device is set to dark, unless they
+   picked light with the switch in the header, and whenever they picked dark. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --color-paper: #0b1210;
+    --color-card: #111a16;
+    --color-ink: #e7ede9;
+    --color-muted: #9caba3;
+    --color-line: #24312b;
+    --color-accent: #56c99d;
+    --color-accent-deep: #8adfbd;
+    --color-accent-soft: #12271f;
+    --color-ember: #e58a52;
+    --color-on-accent: #04130d;
+  }
+  :root:not([data-theme="light"]) .only-dark {
+    display: inline;
+  }
+  :root:not([data-theme="light"]) .only-light {
+    display: none;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-paper: #0b1210;
+  --color-card: #111a16;
+  --color-ink: #e7ede9;
+  --color-muted: #9caba3;
+  --color-line: #24312b;
+  --color-accent: #56c99d;
+  --color-accent-deep: #8adfbd;
+  --color-accent-soft: #12271f;
+  --color-ember: #e58a52;
+  --color-on-accent: #04130d;
+}
+.only-dark {
+  display: none;
+}
+:root[data-theme="dark"] .only-dark {
+  display: inline;
+}
+:root[data-theme="dark"] .only-light {
+  display: none;
 }
 
 html {
@@ -102,7 +149,7 @@ body {
   }
   .btn-primary {
     background: var(--color-accent);
-    color: #fff;
+    color: var(--color-on-accent);
   }
   .btn-primary:hover {
     background: var(--color-accent-deep);

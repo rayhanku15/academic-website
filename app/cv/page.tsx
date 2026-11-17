@@ -34,7 +34,7 @@ export default function CV() {
 
       <p className="-mt-2 mb-12">
         <a className="btn btn-primary" href={profile.cv}>
-          Download full CV <span className="text-white/70">PDF</span>
+          Download full CV <span className="opacity-70">PDF</span>
         </a>
       </p>
 

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { profile } from "./_data/profile";
+import { news } from "./_data/news";
 
 export default function Home() {
   return (
@@ -29,7 +30,7 @@ export default function Home() {
 
           <div className="mt-7 flex flex-wrap gap-3">
             <a className="btn btn-primary" href={profile.cv}>
-              Download CV <span className="text-white/70">PDF</span>
+              Download CV <span className="opacity-70">PDF</span>
             </a>
             <a className="btn btn-quiet" href={`mailto:${profile.email}`}>
               {profile.email}
@@ -85,6 +86,26 @@ export default function Home() {
             </p>
           </div>
         </div>
+      </section>
+
+      {/* Recent updates */}
+      <section className="mt-16 border-t border-line pt-12">
+        <h2 className="text-[1.75rem] font-semibold">Recent updates</h2>
+        <ul className="mt-6 divide-y divide-line border-y border-line">
+          {news.map((item, i) => (
+            <li key={i} className="grid gap-x-8 gap-y-1 py-4 sm:grid-cols-[7.5rem_1fr]">
+              <p className="label pt-1">{item.when}</p>
+              <p>
+                {item.upcoming ? (
+                  <span className="mr-2 rounded-full bg-accent-soft px-2.5 py-0.5 text-[0.78rem] font-medium text-accent-deep">
+                    Upcoming
+                  </span>
+                ) : null}
+                {item.text}
+              </p>
+            </li>
+          ))}
+        </ul>
       </section>
 
       {/* Selected publications */}

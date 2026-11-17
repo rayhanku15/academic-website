@@ -53,7 +53,7 @@ export default function Contact() {
 
       <p className="mt-12">
         <a className="btn btn-primary" href={profile.cv}>
-          Download CV <span className="text-white/70">PDF</span>
+          Download CV <span className="opacity-70">PDF</span>
         </a>
       </p>
     </>

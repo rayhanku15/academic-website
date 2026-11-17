@@ -3,6 +3,7 @@ import Link from "next/link";
 import "./globals.css";
 import Nav from "./_components/Nav";
 import Band from "./_components/Band";
+import ThemeToggle from "./_components/ThemeToggle";
 import { profile } from "./_data/profile";
 
 const description =
@@ -58,9 +59,15 @@ const personJsonLd = {
   sameAs: [profile.scholar, profile.orcid, profile.linkedin],
 };
 
+const themeScript = `(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light"){document.documentElement.setAttribute("data-theme",t)}}catch(e){}})()`;
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Applies a saved light or dark choice before the page paints, so there is no flash. */}
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className="flex min-h-screen flex-col">
         <a
           href="#main"
@@ -70,11 +77,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </a>
 
         <header className="border-b border-line bg-card">
-          <div className="mx-auto flex max-w-[68rem] flex-wrap items-center justify-between gap-x-10 gap-y-2 px-5 py-4 sm:px-8">
-            <Link href="/" className="font-serif text-[1.3rem] font-semibold leading-tight tracking-tight">
+          <div className="mx-auto flex max-w-[68rem] flex-wrap items-center gap-x-6 gap-y-2 px-5 py-4 sm:px-8">
+            <Link href="/" className="mr-auto font-serif text-[1.3rem] font-semibold leading-tight tracking-tight">
               {profile.name}
             </Link>
-            <Nav />
+            {/* On small screens the menu drops to its own row and the theme switch stays beside the name. */}
+            <div className="order-3 w-full lg:order-2 lg:w-auto">
+              <Nav />
+            </div>
+            <div className="order-2 lg:order-3">
+              <ThemeToggle />
+            </div>
           </div>
         </header>
 
