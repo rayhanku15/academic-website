@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import Link from "next/link";
 import "./globals.css";
 import Nav from "./_components/Nav";
@@ -113,6 +114,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </footer>
 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
+        {/* Visitor counts, shown in the Vercel dashboard under Analytics. No cookies. */}
+        <Analytics />
       </body>
     </html>
   );
